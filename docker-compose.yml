@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  facebook-killer:
+    image: facebook-killer:0.1
+    environment:
+      - HTTP_PORT=${SERVER_HTTP_PORT:-8080}
+      - DB_USER=${POSTGRES_USER:-admin}
+      - DB_HOST=${POSTGRES_HOST:-postgres}
+      - DB_PORT=${POSTGRES_PORT:-5432}
+      - DB_PASSWORD=${POSTGRES_PASSWORD:-admin}
+      - DB_NAME=${POSTGRES_DB:-facebookiller}
+    ports:
+      - "80:8080"
+    links:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-admin}
+      - POSTGRES_DB=${POSTGRES_DB:-facebookiller}
+    ports:
+      - "5432"
+
