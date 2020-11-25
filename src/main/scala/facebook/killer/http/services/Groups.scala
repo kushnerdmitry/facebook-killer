@@ -53,7 +53,7 @@ object Groups extends Service {
       }
 
       "List group subscribers" **
-        GET / "subscribers" / pathVar[Long]("id", idDescription) |>> { (id: Long) =>
+        GET / pathPrefix / "subscribers" / pathVar[Long]("id", idDescription) |>> { (id: Long) =>
         algebra.listSubscribers(id).flatMap(subs => Ok(subs))
       }
     }
