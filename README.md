@@ -6,7 +6,7 @@
 К этому можно прикрутить REST (например, akka-http), можно формочку, если хочется.
 Ну и понятно, у этого всего должна быть сборка в sbt
 
-#### [API LINK](https://facebook-killer.herokuapp.com)  
+#### [API LINK](http://51.15.104.77:9000)  
 
 ### Используемый стек
 
@@ -23,11 +23,10 @@
 - docker-compose
 - postgresql
 
-### CI/CD
+### CI
 
 - github
 - travis
-- heroku
 
 ### TODOs
 - Модульные тесты на:
